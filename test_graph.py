@@ -1,15 +1,24 @@
 from src.agent.graph import graph
 
-# Input state
+
 state = {
-    "input_text": "heloo how are u doing today"
+    "input_text": "heloo i hope your doing well can u help me",
+    "tone": "Email"
 }
 
-# Run graph
 result = graph.invoke(state)
 
-# Print result
 print("\n===== FINAL OUTPUT =====\n")
 
-for key, value in result.items():
-    print(f"{key}: {value}")
+print("Original Text:")
+print(result["input_text"])
+
+print("\nTone:")
+print(result["tone"])
+
+print("\nFinal Refined Text:")
+print(result["final_output"])
+
+if result.get("error_message"):
+    print("\nError:")
+    print(result["error_message"])
