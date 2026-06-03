@@ -137,8 +137,27 @@ Hello, how are you doing today?
 - Frontend UI
 - Streaming responses
 - Validation and retry logic
+- Multiple refinement tones: Professional, Formal, Concise, Email, LinkedIn, Academic, and Casual
+- Input validation for empty, invalid, and long text inputs
+- Logging for workflow execution and debugging
+- Retry mechanism for LLM API calls
+- FastAPI backend with REST endpoint
+- Streamlit frontend for user interaction
+- Test cases for validating different tone outputs
 
 ---
+
+## Sample Test Cases
+
+The project was tested with multiple refinement tones to verify output consistency and quality.
+
+| Test Case | Input | Tone | Output |
+|---|---|---|---|
+| 1 | heloo i hope your doing well can u help me | Email | I hope you are doing well. Could you possibly assist me? |
+| 2 | i want job in ai and i am learning python | LinkedIn | I am currently pursuing a career in Artificial Intelligence and am actively developing my skills in Python programming. |
+| 3 | this project is good and i made it using ai | Professional | This project is of high quality and was developed utilizing artificial intelligence. |
+| 4 | can u send me the file asap | Formal | Could you please forward the file to me as soon as possible? |
+| 5 | i have completed the work and now testing it | Concise | I've completed the work and am currently testing it. |
 
 ## Author
 
