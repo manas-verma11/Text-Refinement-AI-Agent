@@ -4,6 +4,7 @@ import requests
 
 API_URL = "http://127.0.0.1:8000/refine"
 
+
 TONES = [
     "Professional",
     "Formal",
@@ -12,6 +13,18 @@ TONES = [
     "LinkedIn",
     "Academic",
     "Casual"
+]
+
+
+PURPOSES = [
+    "General Text",
+    "Email",
+    "LinkedIn Post",
+    "LinkedIn Message",
+    "Resume Bullet",
+    "Apology Message",
+    "Request Message",
+    "Follow-up Message"
 ]
 
 
@@ -25,13 +38,19 @@ st.set_page_config(
 st.title("🤖 Text Refinement AI Agent")
 
 st.write(
-    "Enter rough, informal, or grammatically incorrect text and refine it using different tones."
+    "Enter rough, informal, or grammatically incorrect text and refine it based on tone and purpose."
 )
 
 
 tone = st.selectbox(
     "Choose refinement tone:",
     TONES
+)
+
+
+purpose = st.selectbox(
+    "Choose writing purpose:",
+    PURPOSES
 )
 
 
@@ -54,7 +73,8 @@ if st.button("Refine Text"):
                     API_URL,
                     json={
                         "text": user_input,
-                        "tone": tone
+                        "tone": tone,
+                        "purpose": purpose
                     },
                     timeout=60
                 )
@@ -65,7 +85,11 @@ if st.button("Refine Text"):
                     st.subheader("Original Text")
                     st.info(data["original_text"])
 
-                    st.subheader(f"Refined Text ({data['tone']} Tone)")
+                    st.subheader("Selected Options")
+                    st.write(f"**Tone:** {data['tone']}")
+                    st.write(f"**Purpose:** {data['purpose']}")
+
+                    st.subheader("Refined Text")
                     st.success(data["refined_text"])
 
                 else:

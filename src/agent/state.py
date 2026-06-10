@@ -4,6 +4,7 @@ from typing import TypedDict
 class AgentState(TypedDict, total=False):
     input_text: str
     tone: str
+    purpose: str
 
     is_valid: bool
     error_message: str
