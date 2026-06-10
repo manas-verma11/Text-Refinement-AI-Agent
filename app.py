@@ -28,6 +28,13 @@ PURPOSES = [
 ]
 
 
+CHANGE_LABELS = {
+    "replace": "Changed",
+    "insert": "Added",
+    "delete": "Removed"
+}
+
+
 st.set_page_config(
     page_title="Text Refinement AI Agent",
     page_icon="🤖",
@@ -54,10 +61,16 @@ purpose = st.selectbox(
 )
 
 
+mask_sensitive = st.checkbox(
+    "Mask sensitive data before sending to AI",
+    value=True
+)
+
+
 user_input = st.text_area(
     "Enter your text:",
     height=180,
-    placeholder="Example: heloo i hope your doing well can u help me"
+    placeholder="Example: hello my email is manas@gmail.com and my phone number is 9876543210 please make this professional"
 )
 
 
@@ -74,7 +87,8 @@ if st.button("Refine Text"):
                     json={
                         "text": user_input,
                         "tone": tone,
-                        "purpose": purpose
+                        "purpose": purpose,
+                        "mask_sensitive_data": mask_sensitive
                     },
                     timeout=60
                 )
@@ -82,19 +96,62 @@ if st.button("Refine Text"):
                 if response.status_code == 200:
                     data = response.json()
 
+                    original_text = data.get("original_text", user_input)
+                    processed_text = data.get("processed_text", original_text)
+                    refined_text = data.get("refined_text", "")
+                    detected_sensitive_data = data.get("detected_sensitive_data", [])
+                    changes = data.get("changes", [])
+
+                    if detected_sensitive_data:
+                        st.warning(
+                            "Sensitive data detected: "
+                            + ", ".join(detected_sensitive_data)
+                        )
+
                     st.subheader("Original Text")
-                    st.info(data["original_text"])
+                    st.info(original_text)
+
+                    if processed_text != original_text:
+                        st.subheader("Text Sent for Refinement")
+                        st.warning(processed_text)
 
                     st.subheader("Selected Options")
-                    st.write(f"**Tone:** {data['tone']}")
-                    st.write(f"**Purpose:** {data['purpose']}")
+                    st.write(f"**Tone:** {data.get('tone', tone)}")
+                    st.write(f"**Purpose:** {data.get('purpose', purpose)}")
 
                     st.subheader("Refined Text")
-                    st.success(data["refined_text"])
+                    st.success(refined_text)
+
+                    st.subheader("Changes Made")
+
+                    if changes:
+                        for index, change in enumerate(changes, start=1):
+                            change_type = change.get("type", "change")
+                            label = CHANGE_LABELS.get(
+                                change_type,
+                                change_type.title()
+                            )
+
+                            before = change.get("before", "")
+                            after = change.get("after", "")
+
+                            with st.expander(f"{index}. {label}"):
+                                if before:
+                                    st.write("**Before:**")
+                                    st.warning(before)
+
+                                if after:
+                                    st.write("**After:**")
+                                    st.success(after)
+                    else:
+                        st.info("No major changes detected.")
 
                 else:
-                    error_data = response.json()
-                    st.error(error_data.get("detail", "Something went wrong."))
+                    try:
+                        error_data = response.json()
+                        st.error(error_data.get("detail", "Something went wrong."))
+                    except Exception:
+                        st.error("Something went wrong with the backend API.")
 
             except requests.exceptions.ConnectionError:
                 st.error(

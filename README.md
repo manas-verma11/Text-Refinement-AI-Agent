@@ -159,6 +159,20 @@ The project was tested with multiple refinement tones to verify output consisten
 | 4 | can u send me the file asap | Formal | Could you please forward the file to me as soon as possible? |
 | 5 | i have completed the work and now testing it | Concise | I've completed the work and am currently testing it. |
 
+### Privacy Guard Example
+
+Input:
+
+hello my email is manas@gmail.com and my phone number is 9876543210 please make this professional
+
+Detected Sensitive Data:
+
+Email Address, Phone Number
+
+Text Sent to AI:
+
+hello my email is [EMAIL] and my phone number is [PHONE_NUMBER] please make this professional
+
 ## Author
 
 Manas Verma
