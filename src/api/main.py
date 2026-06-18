@@ -157,3 +157,10 @@ def submit_feedback(request: FeedbackRequest):
 @api.get("/analytics")
 def analytics_dashboard():
     return get_analytics_summary()
+
+@api.get("/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "service": "Text Refinement AI Agent API"
+    }

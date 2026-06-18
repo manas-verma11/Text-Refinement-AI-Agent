@@ -225,6 +225,26 @@ The benchmark results are saved in:
 ```text
 benchmark_results.csv
 
+## Deployment Readiness
+
+The project includes a deployment guide covering:
+
+- Local deployment
+- Production-style deployment
+- Environment variables
+- API health check
+- Security considerations
+- Scalability plan
+- Operational support
+- Analytics and feedback logs
+- Benchmarking results
+- Deployment checklist
+
+See:
+
+```text
+DEPLOYMENT.md
+
 ## Author
 
 Manas Verma
