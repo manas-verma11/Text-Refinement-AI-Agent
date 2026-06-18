@@ -245,6 +245,13 @@ See:
 ```text
 DEPLOYMENT.md
 
+## Run with Docker
+
+Build and start the full application:
+
+```bash
+docker compose up --build
+
 ## Author
 
 Manas Verma
