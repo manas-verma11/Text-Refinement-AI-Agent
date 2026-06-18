@@ -1,10 +1,13 @@
+import os
 import streamlit as st
 import requests
 
 
-REFINE_API_URL = "http://127.0.0.1:8000/refine"
-FEEDBACK_API_URL = "http://127.0.0.1:8000/feedback"
-ANALYTICS_API_URL = "http://127.0.0.1:8000/analytics"
+BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+
+REFINE_API_URL = f"{BACKEND_URL}/refine"
+FEEDBACK_API_URL = f"{BACKEND_URL}/feedback"
+ANALYTICS_API_URL = f"{BACKEND_URL}/analytics"
 
 
 TONES = [
