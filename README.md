@@ -10,27 +10,27 @@ The system takes rough, informal, or grammatically incorrect text and refines it
 
 ### Streamlit User Interface
 
-![Streamlit UI](assets/streamlit-ui.png)
+![Streamlit UI](./assets/streamlit-ui.png)
 
 ### Privacy Guard
 
-![Privacy Guard](assets/privacy-guard.png)
+![Privacy Guard](./assets/privacy-guard.png)
 
 ### Analytics Dashboard
 
-![Analytics Dashboard](assets/analytics-dashboard.png)
+![Analytics Dashboard](./assets/analytics-dashboard.png)
 
 ### FastAPI Documentation
 
-![FastAPI Docs](assets/fastapi-docs.png)
+![FastAPI Docs](./assets/fastapi-docs.png)
 
 ### Benchmark Results
 
-![Benchmark Results](assets/benchmark-results.png)
+![Benchmark Results](./assets/benchmark-results.png)
 
 ### Dockerized Application
 
-![Docker Running](assets/docker-running.png)
+![Docker Running](./assets/docker-running.png)
 
 ---
 
@@ -654,5 +654,3 @@ The project is complete as a strong MVP.
 
 **Manas Verma**
 
-B.Tech Computer Science Engineering
-KIIT University
