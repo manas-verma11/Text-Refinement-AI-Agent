@@ -1,0 +1,2 @@
+log_id,created_at,tone,purpose,use_case,input_length,output_length,change_count,sensitive_data_count,sensitive_data_types,masked_sensitive_data,processing_time_seconds
+2deb021c-e618-4ab6-81ce-29afcb5ad615,2026-06-18T11:17:16.952105,Formal,General Text,General Refinement,19,27,1,0,,True,0.9

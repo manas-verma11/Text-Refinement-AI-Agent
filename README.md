@@ -173,6 +173,58 @@ Text Sent to AI:
 
 hello my email is [EMAIL] and my phone number is [PHONE_NUMBER] please make this professional
 
+## Evaluation & Benchmarking
+
+The project includes a benchmarking script to evaluate refinement quality across multiple real-world communication scenarios.
+
+### Benchmark Coverage
+
+The benchmark evaluates:
+
+- Client email refinement
+- Incident communication
+- Project status updates
+- Meeting summaries
+- Executive updates
+- Privacy guard and sensitive data masking
+
+### Metrics Used
+
+- Output generation success
+- Change detection
+- Expected term preservation
+- Placeholder safety
+- Reasonable output length
+- Privacy detection
+- Privacy masking
+- Sensitive data leakage prevention
+- Processing time
+
+### Benchmark Results
+
+| Metric | Result |
+|---|---|
+| Total Test Cases | 6 |
+| Passed Cases | 6/6 |
+| Average Auto Score | 97.92% |
+| Average Processing Time | 0.71 seconds |
+
+### Case-Level Results
+
+| Case ID | Score | Processing Time |
+|---|---:|---:|
+| client_email_001 | 100.0% | 1.20 sec |
+| incident_001 | 87.5% | 0.59 sec |
+| project_status_001 | 100.0% | 0.64 sec |
+| meeting_summary_001 | 100.0% | 0.51 sec |
+| executive_update_001 | 100.0% | 0.72 sec |
+| privacy_guard_001 | 100.0% | 0.61 sec |
+
+The benchmark results are saved in:
+
+```text
+benchmark_results.csv
+
 ## Author
 
 Manas Verma

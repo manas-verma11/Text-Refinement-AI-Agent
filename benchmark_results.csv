@@ -1,0 +1,13 @@
+case_id,tone,purpose,use_case,original_text,processed_text,refined_text,processing_time_seconds,change_count,detected_sensitive_data,output_not_empty,changes_detected,expected_terms_preserved,no_banned_placeholders,length_reasonable,privacy_detection_passed,privacy_masking_passed,no_sensitive_data_leaked,passed_checks,total_checks,auto_score,error_message
+client_email_001,Formal,Request Message,Client Email,can u send me the report asap client is asking,can u send me the report asap client is asking,"I would appreciate it if you could provide me with the report as soon as possible, as our client has requested it.",1.2,4,,True,True,True,True,True,True,True,True,8,8,100.0,
+incident_001,Formal,Email,Incident Communication,server is down users cant login team is checking,server is down users cant login team is checking,"We are currently experiencing a server outage, which is preventing users from logging in. Our team is actively investigating the issue and working to resolve it as soon as possible.",0.59,5,,True,True,False,True,True,True,True,True,7,8,87.5,
+project_status_001,Professional,General Text,Project Status Update,completed frontend api privacy guard next working on analytics dashboard,completed frontend api privacy guard next working on analytics dashboard,"Project Status Update: 
+Completed work includes the frontend API privacy guard. 
+Current status: The team is now focusing on developing the analytics dashboard.",0.64,5,,True,True,True,True,True,True,True,True,8,8,100.0,
+meeting_summary_001,Professional,General Text,Meeting Summary,we discussed api work frontend work and next feedback analytics deployment docs,we discussed api work frontend work and next feedback analytics deployment docs,"Meeting Summary:
+Discussion Points: 
+- API work
+- Frontend work
+- Next steps for feedback, analytics, deployment, and documentation.",0.51,4,,True,True,True,True,True,True,True,True,8,8,100.0,
+executive_update_001,Concise,General Text,Executive Update,project has tone purpose templates privacy guard feedback and analytics ready,project has tone purpose templates privacy guard feedback and analytics ready,"Key project components are now ready, including purpose templates, privacy guard, feedback, and analytics.",0.72,5,,True,True,True,True,True,True,True,True,8,8,100.0,
+privacy_guard_001,Professional,General Text,General Refinement,hello my email is manas@gmail.com and phone number is 9876543210 please make this professional,hello my email is [EMAIL] and phone number is [PHONE_NUMBER] please make this professional,"Contact information: email at [EMAIL], phone number [PHONE_NUMBER].",0.61,3,"Email Address, Phone Number, Roll Number",True,True,True,True,True,True,True,True,8,8,100.0,

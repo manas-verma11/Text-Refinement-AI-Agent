@@ -5,6 +5,7 @@ class AgentState(TypedDict, total=False):
     input_text: str
     tone: str
     purpose: str
+    use_case: str
 
     is_valid: bool
     error_message: str
