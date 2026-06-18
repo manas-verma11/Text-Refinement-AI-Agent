@@ -2,7 +2,10 @@
 .venv/
 __pycache__/
 *.pyc
+.pytest_cache/
 
 feedback.csv
 usage_logs.csv
 benchmark_results.csv
+
+.DS_Store

@@ -1,4 +1,0 @@
-log_id,created_at,tone,purpose,use_case,input_length,output_length,change_count,sensitive_data_count,sensitive_data_types,masked_sensitive_data,processing_time_seconds
-2deb021c-e618-4ab6-81ce-29afcb5ad615,2026-06-18T11:17:16.952105,Formal,General Text,General Refinement,19,27,1,0,,True,0.9
-97b2cb13-7e94-48af-9e44-f9d270e65757,2026-06-18T18:57:27.612097,Professional,General Text,General Refinement,20,35,1,0,,True,1.28
-2f586ddd-7ef3-46fb-80bd-5d4a0b7ceb13,2026-06-18T18:58:10.947732,Formal,General Text,General Refinement,14,6,1,0,,True,0.63
